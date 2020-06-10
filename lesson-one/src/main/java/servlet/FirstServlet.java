@@ -25,9 +25,6 @@ public class FirstServlet implements Servlet, Serializable {
     @Override
     public void service(ServletRequest req, ServletResponse resp) throws ServletException, IOException {
         logger.info("Servlet request");
-        req.setAttribute("headerText", "FirstServlet");
-        config.getServletContext().getRequestDispatcher("/header").include(req, resp);
-//        resp.getWriter().println("<h1>Hello from the first servlet!!!</h1>");
     }
 
     @Override
