@@ -5,12 +5,32 @@
          version="4.0">
   <display-name>Archetype Created Web Application</display-name>
 
-  <servlet>
-    <servlet-name>FirstServlet</servlet-name>
-    <servlet-class>servlet.FirstServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>FirstServlet</servlet-name>
-    <url-pattern>/first_servlet</url-pattern>
-  </servlet-mapping>
+<!--  <servlet>-->
+<!--    <servlet-name>FirstServlet</servlet-name>-->
+<!--    <servlet-class>servlet.FirstServlet</servlet-class>-->
+<!--  </servlet>-->
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>FirstServlet</servlet-name>-->
+<!--    <url-pattern>/first_servlet</url-pattern>-->
+<!--  </servlet-mapping>-->
+  <context-param>
+    <param-name>jdbcConnectionString</param-name>
+    <param-value>jdbc:mysql://localhost:3306/java_ee_db?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;serverTimezone=UTC</param-value>
+  </context-param>
+  <context-param>
+    <param-name>username</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>password</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error404</location>
+  </error-page>
+  <error-page>
+    <error-code>403</error-code>
+    <location>/error403</location>
+  </error-page>
 </web-app>
